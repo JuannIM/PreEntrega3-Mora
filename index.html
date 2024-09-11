@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product Store</h1>
+    </header>
+    <main>
+        <section class="product-form">
+            <h2>Add Product</h2>
+            <form id="productForm">
+                <input type="text" id="productName" placeholder="Product Name" required>
+                <input type="number" id="productPrice" placeholder="Product Price" required min="0">
+                <input type="number" id="productStock" placeholder="Stock Quantity" required min="0">
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <section class="product-search">
+            <h2>Search Product</h2>
+            <input type="text" id="searchInput" placeholder="Search by name...">
+        </section>
+
+        <section class="product-list">
+            <h2>Product List</h2>
+            <ul id="productList"></ul>
+        </section>
+
+        <section class="cart-summary">
+            <h2>Shopping Summary</h2>
+            <ul id="cartList"></ul>
+            <p id="totalPrice">Total: $0.00</p>
+            <button id="calculateTotal">Calculate Total</button>
+            <button id="applyDiscount">Apply Discount (10%)</button>
+            <button id="checkout">Checkout</button>
+        </section>
+
+        <section class="purchase-history">
+            <h2>Purchase History</h2>
+            <ul id="historyList"></ul>
+        </section>
+
+        <section class="export-data">
+            <h2>Export Data</h2>
+            <button id="exportJson">Export Products as JSON</button>
+            <button id="exportCsv">Export Products as CSV</button>
+            <button id="exportHistoryJson">Export Purchase History as JSON</button>
+            <button id="exportHistoryCsv">Export Purchase History as CSV</button>
+        </section>
+
+        <!-- MODAL FOR EDITING PRODUCT -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Edit Product</h2>
+                <form id="editForm">
+                    <input type="text" id="editProductName" placeholder="Product Name" required>
+                    <input type="number" id="editProductPrice" placeholder="Product Price" required min="0">
+                    <input type="number" id="editProductStock" placeholder="Stock Quantity" required min="0">
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
